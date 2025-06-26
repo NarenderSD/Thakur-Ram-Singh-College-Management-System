@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="static/branding/CollegeLogo.png" alt="TRSC College Logo" width="180"/>
+  <img src="student_management_app/static/branding/CollegeLogo.png" alt="TRSC College Logo" width="180"/>
 </p>
 
 <h1 align="center">Thakur Ram Singh College (TRSC) - College Management System</h1>
