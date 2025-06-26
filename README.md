@@ -1,11 +1,11 @@
-# Thakur Ram Singh College (TRSC) - Student Management System
-
 <p align="center">
-  <img src="httpsa://github.com/user-attachments/assets/b21584c6-2580-4960-8488-29408b0f9f1b" alt="TRSC Logo" width="150"/>
+  <img src="static/branding/CollegeLogo.png" alt="TRSC College Logo" width="180"/>
 </p>
 
+<h1 align="center">Thakur Ram Singh College (TRSC) - College Management System</h1>
+
 <p align="center">
-  <strong>A premium, modern, and fully-featured student management portal designed to streamline college administration and enhance the student experience.</strong>
+  <strong>A premium, modern, and fully-featured student management portal designed for TRSC College, Sankhi.</strong>
 </p>
 
 <p align="center">
@@ -19,52 +19,29 @@
 
 ## ✨ Key Features
 
-This portal is built with a role-based workflow for HOD, Staff, and Students, providing each with a unique, feature-rich dashboard.
-
-### 💎 General & UI/UX
 - **Modern Animated UI**: Glassmorphism cards, smooth animations, and a professional design.
 - **Full TRSC Branding**: Consistent logo and branding across all pages.
-- **Fully Responsive**: Works seamlessly on desktops, tablets, and mobile devices.
-- **Secure Authentication**: Robust login and registration system with email-based role detection.
-
-### 👑 HOD Dashboard
-- **User Management**: Add, view, and manage all Staff and Students.
-- **Course & Subject Management**: Easily create and manage courses and subjects.
-- **View Contact Queries**: A dedicated page to view and manage all messages from the contact form.
-- **Centralized Dashboard**: At-a-glance view of all users with interactive cards.
-
-### 👨‍🏫 Staff Dashboard
-- **Attendance Management**: Take and update student attendance efficiently.
-- **Result Management**: Add and view student results.
-- **Leave Management**: View and manage student leave applications.
-- **Feedback System**: Send and receive feedback.
-- **Interactive Dashboard**: Animated cards for key metrics.
-
-### 🎓 Student Dashboard
-- **Personalized Dashboard**: Quick links and animated cards for key actions.
-- **View Attendance & Results**: Easily track academic progress.
-- **Apply for Leave**: A simple and intuitive leave application process.
-- **Send Feedback**: Communicate directly with staff and administration.
+- **Role-Based Dashboards**: Unique dashboards for HOD, Staff, and Students.
+- **Contact & Feedback System**: Public contact form, HOD inbox, and feedback for staff/students.
+- **Attendance & Result Management**: For staff and students.
+- **Leave Management**: Apply and manage leaves for staff and students.
+- **Secure Authentication**: Email-based role detection and password hashing.
+- **Responsive Design**: Works on desktop, tablet, and mobile.
 
 ---
 
 ## 🛠️ Tech Stack
 
-This project is built with a modern and robust technology stack:
-
-| Category      | Technology                                                                                                                                                             |
-|---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Backend**   | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /> <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" /> |
-| **Frontend**  | <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" /> |
-| **UI Framework** | <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" /> <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" /> |
-| **Database**  | <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" /> (for development)                                                 |
-| **Design & Icons** | Animate.css, FontAwesome, Google Fonts, Glassmorphism UI                                                                                                               |
+| Category      | Technology                                                                                 |
+|---------------|--------------------------------------------------------------------------------------------|
+| **Backend**   | Python 3.8+, Django 3.2+                                                                  |
+| **Frontend**  | HTML5, CSS3, JavaScript, Bootstrap, jQuery                                                |
+| **UI/UX**     | Animate.css, FontAwesome, Google Fonts, Glassmorphism UI                                  |
+| **Database**  | SQLite (development)                                                                      |
 
 ---
 
 ## 🚀 Setup & Installation
-
-Follow these steps to get the project running locally:
 
 **1. Prerequisites:**
 - Python 3.8+
@@ -110,18 +87,19 @@ The application will be available at `http://127.0.0.1:8000/`.
 
 ## 📖 Usage Guide
 
-**1. Registration:**
-- Navigate to the **Register** page.
-- Your role (HOD, Staff, Student) is automatically determined by your email format:
-  - **HOD**: `yourname.hod@trsc.edu.in`
-  - **Staff**: `yourname.staff@trsc.edu.in`
-  - **Student**: `yourname.student@trsc.edu.in`
+- **Registration:** Use your college email (e.g., `yourname.hod@trsc.edu.in`, `yourname.staff@trsc.edu.in`, `yourname.student@trsc.edu.in`).
+- **Login:** Use your registered email and password.
+- **Dashboards:**
+  - HOD: Manage staff, students, courses, subjects, view contact messages, etc.
+  - Staff: Take attendance, manage results, feedback, leave, etc.
+  - Student: View attendance, results, apply for leave, send feedback, etc.
+- **Contact Form:** Public users can send queries via the contact page; HOD can view all messages in their dashboard.
 
-**2. Login:**
-- Use your registered email and password to log in. You will be redirected to your respective dashboard.
+---
 
-**3. Explore Your Dashboard:**
-- Each dashboard is tailored to the user's role, providing access to relevant features and information.
+## 📸 Screenshots
+
+> _Add screenshots of the login page, dashboards, and contact messages inbox here for a more premium look._
 
 ---
 
@@ -138,5 +116,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 <p align="center">
-  Built with ❤️ by <b>Narender Singh</b>
+  Built with ❤️ by <b>Narender Singh</b> for <b>Thakur Ram Singh College (TRSC)</b>
 </p> 
