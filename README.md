@@ -9,18 +9,18 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.8%2B-blue.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/Django-3.2%2B-green.svg" alt="Django Version">
-  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License">
-  <img src="https://img.shields.io/badge/UI/UX-Premium-orange" alt="UI/UX">
-  <img src="https://img.shields.io/badge/Deployed-Localhost%20%7C%20Custom%20Server-brightgreen" alt="Deployment">
-  <img src="https://img.shields.io/badge/Contributors-Welcome-blueviolet" alt="Contributors">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue?logo=python&logoColor=white" alt="Python Version">
+  <img src="https://img.shields.io/badge/Django-3.2%2B-092E20?logo=django&logoColor=white" alt="Django Version">
+  <img src="https://img.shields.io/badge/License-MIT-yellow?logo=open-source-initiative&logoColor=white" alt="License">
+  <img src="https://img.shields.io/badge/UI/UX-Premium-orange?logo=figma&logoColor=white" alt="UI/UX">
+  <img src="https://img.shields.io/badge/Deployed-Localhost%20%7C%20Custom%20Server-brightgreen?logo=vercel&logoColor=white" alt="Deployment">
+  <img src="https://img.shields.io/badge/Contributors-Welcome-blueviolet?logo=github" alt="Contributors">
 </p>
 
 ---
 
 <p align="center" style="font-size:1.15em; color:#1a73e8; font-weight:bold;">
-  <img src="https://img.icons8.com/fluency/48/000000/college.png" width="32" style="vertical-align:middle;"/> <b>TRSC College Management System</b> is a next-generation, all-in-one platform for seamless college administration, staff, and student experience.<br/>
+  <b>TRSC College Management System</b> is a next-generation, all-in-one platform for seamless college administration, staff, and student experience.<br/>
   <span style="color:#f7b731;">Modern. Secure. Branded. Ready for the future of education.</span>
 </p>
 
@@ -28,37 +28,54 @@
 
 ## 🚀 Product Highlights
 
-- <img src="https://img.icons8.com/color/32/000000/verified-badge.png" width="22"/> **100% TRSC Branding**: Logo, name, and theme everywhere—no generic or old references.
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/diamond.png" width="22"/> **Premium UI/UX**: Glassmorphism, animations, and a luxury feel throughout.
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/lock-2.png" width="22"/> **Secure & Reliable**: Django authentication, password hashing, and robust data integrity.
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/people-working-together.png" width="22"/> **Role-Based Dashboards**: Tailored for HOD/Admin, Staff, and Students.
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/attendance-mark.png" width="22"/> **Attendance & Result Management**
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/leave.png" width="22"/> **Leave & Feedback System**
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/responsive.png" width="22"/> **Mobile Responsive**: Works beautifully on all devices.
-- <img src="https://img.icons8.com/ios-filled/32/1e2833/rocket--v1.png" width="22"/> **Fast, Modern, and Easy to Use**
+- <img src="https://img.shields.io/badge/-100%25%20TRSC%20Branding-f7b731?style=flat-square&logo=appveyor&logoColor=white"/> Logo, name, and theme everywhere—no generic or old references.
+- <img src="https://img.shields.io/badge/-Premium%20UI%2FUX-1e2833?style=flat-square&logo=figma&logoColor=f7b731"/> Glassmorphism, animations, and a luxury feel throughout.
+- <img src="https://img.shields.io/badge/-Secure%20%26%20Reliable-1e2833?style=flat-square&logo=lock&logoColor=f7b731"/> Django authentication, password hashing, and robust data integrity.
+- <img src="https://img.shields.io/badge/-Role--Based%20Dashboards-1e2833?style=flat-square&logo=users&logoColor=f7b731"/> Tailored for HOD/Admin, Staff, and Students.
+- <img src="https://img.shields.io/badge/-Attendance%20%26%20Result%20Management-1e2833?style=flat-square&logo=google-classroom&logoColor=f7b731"/>
+- <img src="https://img.shields.io/badge/-Leave%20%26%20Feedback%20System-1e2833?style=flat-square&logo=mailbox&logoColor=f7b731"/>
+- <img src="https://img.shields.io/badge/-Mobile%20Responsive-1e2833?style=flat-square&logo=responsive&logoColor=f7b731"/> Works beautifully on all devices.
+- <img src="https://img.shields.io/badge/-Fast%2C%20Modern%2C%20and%20Easy%20to%20Use-1e2833?style=flat-square&logo=rocket&logoColor=f7b731"/>
 
 ---
 
-## 🛠️ Tech Stack & Tools
+## 🛠️ Tech Stack
 
-<p align="center">
-  <img src="https://img.icons8.com/color/48/000000/python.png" title="Python" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/django.png" title="Django" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/html-5--v1.png" title="HTML5" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/css3.png" title="CSS3" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" title="JavaScript" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/bootstrap.png" title="Bootstrap" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/jquery.png" title="jQuery" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/sqlite.png" title="SQLite" width="36"/>
-  <img src="https://img.icons8.com/color/48/000000/font-awesome.png" title="FontAwesome" width="36"/>
-</p>
-
-| Category      | Technology                                                                                 |
-|---------------|--------------------------------------------------------------------------------------------|
-| **Backend**   | Python 3.8+, Django 3.2+                                                                  |
-| **Frontend**  | HTML5, CSS3, JavaScript, Bootstrap, jQuery                                                |
-| **UI/UX**     | Animate.css, FontAwesome, Google Fonts, Glassmorphism UI                                  |
-| **Database**  | SQLite (development)                                                                      |
+<table align="center">
+  <tr>
+    <th>Backend</th>
+    <th>Frontend</th>
+    <th>UI/UX</th>
+    <th>Database</th>
+    <th>Other</th>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://img.shields.io/badge/Python-3.8+-3776AB?logo=python&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/Django-3.2+-092E20?logo=django&logoColor=white"/>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black"/><br>
+      <img src="https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/jQuery-0769AD?logo=jquery&logoColor=white"/>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/FontAwesome-528DD7?logo=fontawesome&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/Google%20Fonts-4285F4?logo=googlefonts&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/Animate.css-FF4088?logo=css3&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/Glassmorphism-1e2833?logo=window-10&logoColor=f7b731"/>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white"/>
+    </td>
+    <td align="center">
+      <img src="https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white"/><br>
+      <img src="https://img.shields.io/badge/VS%20Code-007ACC?logo=visualstudiocode&logoColor=white"/>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -141,7 +158,7 @@ Visit: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!<br/>
-Check the [issues page](https://github.com/your-username/college-management-system/issues) or submit a pull request.
+Check the [issues page](https://github.com/NarenderSD/Thakur-Ram-Singh-College-Management-System/issues) or submit a pull request.
 
 ---
 
@@ -163,7 +180,7 @@ A: Use the contact form or reach out to the maintainer below.
 - **Email:** [info@trsc.edu.in](mailto:info@trsc.edu.in)
 - **Website:** [https://trsc.edu.in](https://trsc.edu.in)
 - **Project Maintainer:** Narender Singh
-- <img src="https://img.icons8.com/color/48/000000/linkedin.png" width="22" style="vertical-align:middle;"/> [LinkedIn](https://www.linkedin.com/in/narendersingh1/)
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/narendersingh1/)
 
 ---
 
