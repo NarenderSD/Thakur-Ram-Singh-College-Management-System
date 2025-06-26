@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .trsc-hero {
+    background: linear-gradient(120deg, #1e2833 60%, #f7b731 100%);
+    height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    position: relative;
+  }
+  .trsc-hero-logo {
+    height: 120px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    border-radius: 16px;
+    background: #fff;
+    padding: 12px;
+}
+  .trsc-hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    color: #f7b731;
+    text-shadow: 2px 2px 8px #1e2833;
+  }
+  .trsc-hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+    color: #fff;
+    text-shadow: 1px 1px 6px #1e2833;
+  }
+  .trsc-hero-btns a {
+    margin: 0 12px;
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .trsc-hero-btns .btn-primary {
+    background: #f7b731;
+    color: #1e2833;
+    border: none;
+  }
+  .trsc-hero-btns .btn-primary:hover {
+    background: #fff;
+    color: #f7b731;
+  }
+  .trsc-hero-btns .btn-outline-light {
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+  }
+  .trsc-hero-btns .btn-outline-light:hover {
+    background: #fff;
+    color: #1e2833;
+  }
+  @media (max-width: 600px) {
+    .trsc-hero-title { font-size: 2rem; }
+    .trsc-hero-subtitle { font-size: 1rem; }
+    .trsc-hero-logo { height: 70px; }
+  }
+</style>
+<div class="trsc-hero">
+  <img src="{% static 'branding/CollegeLogo.png' %}" alt="TRSC Logo" class="trsc-hero-logo">
+  <div class="trsc-hero-title">Thakur Ram Singh College (TRSC)</div>
+  <div class="trsc-hero-subtitle">Empowering Education, Inspiring Success</div>
+  <div class="trsc-hero-btns">
+    <a href="/login" class="btn btn-primary">Login</a>
+    <a href="/registration" class="btn btn-outline-light">Register</a>
+    <a href="/contact" class="btn btn-outline-light">Contact Us</a>
+  </div>
+</div>
+{% endblock content %}

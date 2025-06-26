@@ -1,0 +1,80 @@
+{% extends 'hod_template/base_template.html' %}
+{% load static %}
+
+{% block page_title %}
+Contact Messages
+{% endblock page_title %}
+
+{% block main_content %}
+<style>
+  .contact-table-card {
+    background: rgba(255,255,255,0.13);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.17);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 30px 20px;
+    margin-bottom: 32px;
+    animation: fadeInUp 1.2s;
+  }
+  .contact-table th, .contact-table td {
+    vertical-align: middle;
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+<div class="container-fluid">
+  <div class="contact-table-card">
+    <h3 class="mb-4" style="color:#f7b731; font-weight:bold;">Contact Queries</h3>
+    <input type="text" id="contactSearch" class="form-control mb-3" placeholder="Search by name, email, phone or message..." onkeyup="filterContactTable()">
+    <div class="table-responsive">
+      <table class="table table-hover contact-table" id="contactTable">
+        <thead>
+          <tr style="background:rgba(247,183,49,0.12);">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for msg in messages_list %}
+          <tr>
+            <td>{{ msg.name }}</td>
+            <td>{{ msg.email }}</td>
+            <td>{{ msg.phone }}</td>
+            <td>{{ msg.message }}</td>
+            <td>{{ msg.created_at|date:'d M Y, H:i' }}</td>
+          </tr>
+          {% empty %}
+          <tr><td colspan="5" class="text-center">No contact messages found.</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+function filterContactTable() {
+  var input = document.getElementById('contactSearch');
+  var filter = input.value.toLowerCase();
+  var table = document.getElementById('contactTable');
+  var trs = table.getElementsByTagName('tr');
+  for (var i = 1; i < trs.length; i++) {
+    var tds = trs[i].getElementsByTagName('td');
+    var show = false;
+    for (var j = 0; j < tds.length; j++) {
+      if (tds[j] && tds[j].innerText.toLowerCase().indexOf(filter) > -1) {
+        show = true;
+        break;
+      }
+    }
+    trs[i].style.display = show ? '' : 'none';
+  }
+}
+</script>
+{% endblock main_content %} 

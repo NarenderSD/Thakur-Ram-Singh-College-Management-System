@@ -1,0 +1,90 @@
+{% block main_content %}
+<div class="container mt-4">
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card shadow-lg border-0 animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95);">
+        <div class="card-body text-center">
+          <i class="fas fa-user-graduate fa-2x mb-2" style="color:#f7b731;"></i>
+          <h5 class="card-title">Total Attendance</h5>
+          <h2 class="counter" data-count="{{ total_attendance|default:0 }}">0</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-lg border-0 animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95);">
+        <div class="card-body text-center">
+          <i class="fas fa-check-circle fa-2x mb-2" style="color:#27ae60;"></i>
+          <h5 class="card-title">Present</h5>
+          <h2 class="counter" data-count="{{ attendance_present|default:0 }}">0</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card shadow-lg border-0 animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95);">
+        <div class="card-body text-center">
+          <i class="fas fa-times-circle fa-2x mb-2" style="color:#e74c3c;"></i>
+          <h5 class="card-title">Absent</h5>
+          <h2 class="counter" data-count="{{ attendance_absent|default:0 }}">0</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row g-4">
+    <div class="col-md-3">
+      <a href="{% url 'student_view_attendance' %}" class="card shadow border-0 text-center animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95); text-decoration:none;">
+        <div class="card-body">
+          <i class="fas fa-calendar-alt fa-2x mb-2" style="color:#f7b731;"></i>
+          <h6 class="card-title">View Attendance</h6>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'student_view_result' %}" class="card shadow border-0 text-center animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95); text-decoration:none;">
+        <div class="card-body">
+          <i class="fas fa-tasks fa-2x mb-2" style="color:#2980ef;"></i>
+          <h6 class="card-title">View Result</h6>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'student_apply_leave' %}" class="card shadow border-0 text-center animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95); text-decoration:none;">
+        <div class="card-body">
+          <i class="fas fa-envelope-open-text fa-2x mb-2" style="color:#27ae60;"></i>
+          <h6 class="card-title">Apply for Leave</h6>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-3">
+      <a href="{% url 'student_feedback' %}" class="card shadow border-0 text-center animate__animated animate__fadeInUp" style="background:rgba(255,255,255,0.95); text-decoration:none;">
+        <div class="card-body">
+          <i class="fas fa-comments fa-2x mb-2" style="color:#e74c3c;"></i>
+          <h6 class="card-title">Send Feedback</h6>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll('.counter').forEach(function(counter) {
+      let count = +counter.getAttribute('data-count');
+      let i = 0;
+      let step = Math.ceil(count / 40);
+      let interval = setInterval(function() {
+        i += step;
+        if(i >= count) {
+          counter.innerText = count;
+          clearInterval(interval);
+        } else {
+          counter.innerText = i;
+        }
+      }, 20);
+    });
+  });
+</script>
+{% endblock main_content %} 

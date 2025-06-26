@@ -1,0 +1,215 @@
+{% load static %}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+<style>
+  .sidebar {
+    font-family: 'Montserrat', sans-serif;
+    background: rgba(30,40,51,0.95);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+    border-radius: 0 24px 24px 0;
+    min-height: 100vh;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .brand-link {
+    background: rgba(255,255,255,0.13);
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 18px 0 10px 0;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .brand-logo-img {
+    height: 60px !important;
+    width: auto !important;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(247,183,49,0.18);
+    padding: 6px 12px;
+    margin-right: 12px;
+    border-radius: 12px;
+    animation: fadeInDown 1.2s;
+    object-fit: contain;
+    display: block;
+  }
+  .brand-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f7b731;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 8px #1e2833;
+    margin: 0;
+  }
+  .user-panel {
+    background: rgba(255,255,255,0.10);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(31,38,135,0.10);
+    padding: 18px 0 10px 0;
+    margin-bottom: 18px;
+    width: 90%;
+    animation: fadeInUp 1.2s;
+  }
+  .user-panel .image img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 12px rgba(247,183,49,0.18);
+    animation: floatAvatar 3s infinite ease-in-out;
+  }
+  @keyframes floatAvatar {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .user-panel .info {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .user-panel .info a {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-shadow: 1px 1px 6px #1e2833;
+  }
+  .nav-sidebar .nav-link {
+    color: #f7b731;
+    font-weight: 500;
+    border-radius: 8px;
+    margin: 4px 0;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    font-size: 1.08rem;
+    animation: fadeInUp 1.3s;
+  }
+  .nav-sidebar .nav-link.active, .nav-sidebar .nav-link:hover {
+    background: #f7b731;
+    color: #1e2833 !important;
+    transform: scale(1.04);
+    box-shadow: 0 2px 8px rgba(247,183,49,0.12);
+  }
+  .nav-sidebar .nav-icon {
+    color: #fff;
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+  .sidebar-footer {
+    margin-top: auto;
+    position: static;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 0.95rem;
+    opacity: 0.7;
+    letter-spacing: 1px;
+    animation: fadeInUp 1.5s;
+    z-index: 2;
+  }
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <a href="{% url 'staff_home' %}" class="brand-link text-center">
+    <img src="{% static 'branding/CollegeLogo.png' %}" alt="TRSC Logo" class="brand-logo-img">
+    <span class="brand-text">TRSC</span>
+  </a>
+  <div class="sidebar d-flex flex-column align-items-center">
+    <div class="user-panel d-flex flex-column align-items-center">
+          <div class="image">
+        {% if staff and staff.profile_pic %}
+          <img src="{{ staff.profile_pic.url }}" alt="User Image" class="user-avatar-img">
+        {% elif user.profile_pic %}
+          <img src="{{ user.profile_pic.url }}" alt="User Image" class="user-avatar-img">
+        {% endif %}
+          </div>
+      <div class="info mt-2">
+        <a href="{% url 'staff_profile' %}" class="d-block">{{ user.first_name }} {{ user.last_name }}</a>
+          </div>
+        </div>
+        <!-- Sidebar Menu -->
+    <nav class="mt-2 w-100">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+            
+            <li class="nav-item">
+              {% url 'staff_home' as staff_home %}
+              <a href="{{ staff_home }}" class="nav-link {% if request.path == staff_home %} active {% endif %}">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Home
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_take_attendance' as staff_take_attendance %}
+              <a href="{{ staff_take_attendance }}" class="nav-link {% if request.path == staff_take_attendance %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar-plus"></i>
+                <p>
+                  Take Attendance
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_update_attendance' as staff_update_attendance %}
+              <a href="{{ staff_update_attendance }}" class="nav-link {% if request.path == staff_update_attendance %} active {% endif %}">
+                <i class="nav-icon fas fa-calendar-alt"></i>
+                <p>
+                  View Update Attendance
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_add_result' as staff_add_result %}
+              <a href="{{ staff_add_result }}" class="nav-link {% if request.path == staff_add_result %} active {% endif %}">
+                <i class="nav-icon fas fa-tasks"></i>
+                <p>
+                  Add Result
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_apply_leave' as staff_apply_leave %}
+              <a href="{{ staff_apply_leave }}" class="nav-link {% if request.path == staff_apply_leave %} active {% endif %}">
+                <i class="nav-icon fas fa-envelope-open-text"></i>
+                <p>
+                  Apply Leave
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              {% url 'staff_feedback' as staff_feedback %}
+              <a href="{{ staff_feedback }}" class="nav-link {% if request.path == staff_feedback %} active {% endif %}">
+                <i class="nav-icon fas fa-comments"></i>
+                <p>
+                  Feedback
+                  {% comment %} <span class="right badge badge-danger">New</span> {% endcomment %}
+                </p>
+              </a>
+            </li>
+
+          </ul>
+        </nav>
+    <div class="sidebar-footer">Build by Narender Singh</div>
+      </div>
+    </aside>

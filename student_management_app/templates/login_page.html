@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+	<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #1e2833 60%, #f7b731 100%);
+    overflow: hidden;
+  }
+  .trsc-animated-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .trsc-animated-bg span {
+  position: absolute;
+    display: block;
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    animation: float 8s infinite linear;
+  }
+  .trsc-animated-bg span:nth-child(1) { left: 10vw; top: 20vh; animation-delay: 0s; }
+  .trsc-animated-bg span:nth-child(2) { left: 80vw; top: 10vh; animation-delay: 2s; }
+  .trsc-animated-bg span:nth-child(3) { left: 50vw; top: 70vh; animation-delay: 4s; }
+  .trsc-animated-bg span:nth-child(4) { left: 30vw; top: 50vh; animation-delay: 1s; }
+  .trsc-animated-bg span:nth-child(5) { left: 70vw; top: 80vh; animation-delay: 3s; }
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-40px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  .trsc-login-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .trsc-login-logo {
+    height: 90px;
+    margin-bottom: 18px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    padding: 10px;
+    animation: fadeInDown 1s;
+  }
+  .trsc-login-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #f7b731;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 8px #1e2833;
+    animation: fadeInDown 1.2s;
+  }
+  .trsc-login-subtitle {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px #1e2833;
+    animation: fadeInDown 1.3s;
+}
+  .trsc-login-card {
+    background: rgba(255,255,255,0.13);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 40px 30px 30px 30px;
+    width: 100%;
+    max-width: 370px;
+    color: #fff;
+    animation: fadeInUp 1.2s;
+  }
+  .trsc-login-card h1 {
+    color: #f7b731;
+    font-weight: bold;
+    margin-bottom: 18px;
+    font-size: 2rem;
+    text-align: center;
+}
+  .trsc-login-card .form-group label {
+    font-weight: 600;
+    color: #1e2833;
+  }
+  .trsc-login-card .form-control {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    border-radius: 8px;
+    color: #1e2833;
+    font-weight: 500;
+    margin-bottom: 16px;
+    box-shadow: none;
+  }
+  .trsc-login-card .form-control:focus {
+    background: #fff;
+    color: #1e2833;
+    outline: none;
+    box-shadow: 0 0 0 2px #f7b73144;
+  }
+  .trsc-login-card .btn-primary {
+    background: #f7b731;
+    color: #1e2833;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.2s, color 0.2s;
+  }
+  .trsc-login-card .btn-primary:hover {
+    background: #fff;
+    color: #f7b731;
+}
+  .trsc-login-card .forgot, .trsc-login-card .register-link {
+    display: block;
+    text-align: center;
+    font-size: 0.98rem;
+    color: #1e2833;
+    opacity: 0.9;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 500;
+  }
+  .trsc-login-card .forgot:hover, .trsc-login-card .register-link:hover {
+    opacity: 1;
+    color: #f7b731;
+  }
+  .show-password-toggle {
+    cursor: pointer;
+    color: #f7b731;
+    font-size: 1.1rem;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  @media (max-width: 600px) {
+    .trsc-login-title { font-size: 1.3rem; }
+    .trsc-login-logo { height: 60px; }
+    .trsc-login-card { padding: 25px 10px; }
+  }
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+<div class="trsc-animated-bg">
+  <span></span><span></span><span></span><span></span><span></span>
+	</div>
+<div class="trsc-login-wrapper">
+  <img src="{% static 'branding/CollegeLogo.png' %}" alt="TRSC Logo" class="trsc-login-logo">
+  <div class="trsc-login-title">Thakur Ram Singh College (TRSC)</div>
+  <div class="trsc-login-subtitle">Student Management System Portal</div>
+  <div class="trsc-login-card">
+    <form action="{% url 'doLogin' %}" method="get" autocomplete="off">
+		{% csrf_token %}
+      <h1>Login</h1>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" type="email" name="email" id="email" placeholder="Email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div style="position:relative;">
+          <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
+          <span class="show-password-toggle" onclick="togglePassword()"><i class="icon ion-eye"></i></span>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Log In</button>
+      <a href="#" class="forgot">Forgot Password?</a>
+      <a href="/registration" class="register-link">Not Registered Yet? Register Now</a>
+	</form>
+{% if messages %}
+      <div class="col-12 mt-2">
+	{% for message in messages %}
+	{% if message.tags == "error" %}
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <strong>Invalid Login Credentials!</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+	{% endif %}
+	{% endfor %}
+</div>
+{% endif %}
+  </div>
+</div>
+<script>
+function togglePassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+{% endblock content %}

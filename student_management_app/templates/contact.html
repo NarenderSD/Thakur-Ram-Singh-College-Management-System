@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+  body, html {
+    background: linear-gradient(120deg, #1e2833 60%, #f7b731 100%);
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .trsc-contact-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .trsc-contact-bg span {
+    position: absolute;
+    display: block;
+    width: 60px; height: 60px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    animation: float 8s infinite linear;
+  }
+  .trsc-contact-bg span:nth-child(1) { left: 10vw; top: 20vh; animation-delay: 0s; }
+  .trsc-contact-bg span:nth-child(2) { left: 80vw; top: 10vh; animation-delay: 2s; }
+  .trsc-contact-bg span:nth-child(3) { left: 50vw; top: 70vh; animation-delay: 4s; }
+  .trsc-contact-bg span:nth-child(4) { left: 30vw; top: 50vh; animation-delay: 1s; }
+  .trsc-contact-bg span:nth-child(5) { left: 70vw; top: 80vh; animation-delay: 3s; }
+  @keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-40px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  .trsc-contact-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .trsc-contact-card {
+    background: rgba(255,255,255,0.13);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 40px 30px 30px 30px;
+    width: 100%;
+    max-width: 420px;
+    color: #fff;
+    animation: fadeInUp 1.2s;
+    margin-bottom: 32px;
+  }
+  .trsc-contact-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #f7b731;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 8px #1e2833;
+    animation: fadeInDown 1.2s;
+    text-align: center;
+  }
+  .trsc-contact-subtitle {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px #1e2833;
+    animation: fadeInDown 1.3s;
+    text-align: center;
+  }
+  .trsc-contact-card .form-group label {
+    font-weight: 600;
+    color: #1e2833;
+  }
+  .trsc-contact-card .form-control {
+    background: rgba(255,255,255,0.18);
+    border: none;
+    border-radius: 8px;
+    color: #1e2833;
+    font-weight: 500;
+    margin-bottom: 16px;
+    box-shadow: none;
+  }
+  .trsc-contact-card .form-control:focus {
+    background: #fff;
+    color: #1e2833;
+    outline: none;
+    box-shadow: 0 0 0 2px #f7b73144;
+  }
+  .trsc-contact-card .btn-primary {
+    background: #f7b731;
+    color: #1e2833;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    width: 100%;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+    animation: fadeInUp 1.3s;
+  }
+  .trsc-contact-card .btn-primary:hover {
+    background: #fff;
+    color: #f7b731;
+    transform: scale(1.04);
+  }
+  .trsc-contact-info {
+    background: rgba(255,255,255,0.13);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.17);
+    padding: 24px 20px;
+    color: #fff;
+    margin-bottom: 24px;
+    animation: fadeInUp 1.4s;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+  }
+  .trsc-contact-info h4 {
+    color: #f7b731;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .trsc-contact-info p {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+  }
+  .trsc-contact-map {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    margin-bottom: 32px;
+    animation: fadeInUp 1.5s;
+  }
+  @media (max-width: 600px) {
+    .trsc-contact-title { font-size: 1.3rem; }
+    .trsc-contact-card { padding: 25px 10px; }
+    .trsc-contact-info, .trsc-contact-map { max-width: 100vw; }
+  }
+  @keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+</style>
+<div class="trsc-contact-bg">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+<div class="trsc-contact-wrapper">
+  <div class="trsc-contact-title">Contact Us</div>
+  <div class="trsc-contact-subtitle">We'd love to hear from you! Reach out for any queries, support, or feedback.</div>
+  <div class="trsc-contact-card">
+<form action="/contact" method="post">
+{% csrf_token %}
+      <div class="form-group">
+        <label for="contact_name">Name</label>
+        <input type="text" class="form-control" id="contact_name" name="name" placeholder="Enter your Name" required>
+</div>
+      <div class="form-group">
+        <label for="contact_email">Email</label>
+        <input type="email" class="form-control" id="contact_email" name="email" placeholder="Enter your Email" required>
+</div>
+      <div class="form-group">
+        <label for="contact_phone">Phone Number</label>
+        <input type="tel" class="form-control" id="contact_phone" name="phone" placeholder="Enter your Phone number" required>
+</div>
+      <div class="form-group">
+        <label for="contact_desc">How can we help you?</label>
+        <textarea class="form-control" id="contact_desc" rows="5" name="desc" placeholder="Type your message here..." required></textarea>
+</div>
+      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+  </div>
+  <div class="trsc-contact-info">
+    <h4>Thakur Ram Singh College (TRSC)</h4>
+    <p><i class="fas fa-map-marker-alt"></i> 123 College Road, City, State, 123456</p>
+    <p><i class="fas fa-envelope"></i> info@trsc.edu.in</p>
+    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+    <p><i class="fas fa-globe"></i> www.trsc.edu.in</p>
+  </div>
+  <div class="trsc-contact-map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.9999999999995!2d75.80000000000001!3d26.900000000000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzAwLjAiTiA3NcKwNDgnMDAuMCJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+{% endblock content%}

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+
+# If your build process includes running collectstatic, then you probably don't need or want to include staticfiles
+/staticfiles/
+
+# Media folder (user uploads)
+/media/
+
+# Virtual environment
+env/
+venv/
+ENV/
+
+# VSCode settings
+.vscode/
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# PyCharm
+.idea/
+
+# Test coverage
+htmlcov/
+.coverage
+.tox/
+
+# Git
+.git/
+
+# Other
+*.swp
+*.swo 
