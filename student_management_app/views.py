@@ -109,15 +109,13 @@ def doRegistration(request):
 	user = CustomUser()
 	user.username = username
 	user.email = email_id
-		user.password = make_password(password)
+	user.password = make_password(password)
 	user.user_type = user_type
 	user.first_name = first_name
 	user.last_name = last_name
 	user.save()
-		messages.success(request, 'Registration successful! Please login.')
-		return redirect('login')
-	else:
-		return render(request, 'registration.html')
+	messages.success(request, 'Registration successful! Please login.')
+	return redirect('login')
 
 	
 def logout_user(request):
