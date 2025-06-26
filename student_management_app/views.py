@@ -75,45 +75,45 @@ def doRegistration(request):
 		password = request.POST.get('password')
 		confirm_password = request.POST.get('confirmPassword')
 
-		print(email_id)
-		print(password)
-		print(confirm_password)
-		print(first_name)
-		print(last_name)
-		if not (email_id and password and confirm_password):
-			messages.error(request, 'Please provide all the details!!')
-			return render(request, 'registration.html')
-		
-		if password != confirm_password:
-			messages.error(request, 'Both passwords should match!!')
-			return render(request, 'registration.html')
+	print(email_id)
+	print(password)
+	print(confirm_password)
+	print(first_name)
+	print(last_name)
+	if not (email_id and password and confirm_password):
+		messages.error(request, 'Please provide all the details!!')
+		return render(request, 'registration.html')
+	
+	if password != confirm_password:
+		messages.error(request, 'Both passwords should match!!')
+		return render(request, 'registration.html')
 
-		is_user_exists = CustomUser.objects.filter(email=email_id).exists()
+	is_user_exists = CustomUser.objects.filter(email=email_id).exists()
 
-		if is_user_exists:
-			messages.error(request, 'User with this email id already exists. Please proceed to login!!')
-			return render(request, 'registration.html')
+	if is_user_exists:
+		messages.error(request, 'User with this email id already exists. Please proceed to login!!')
+		return render(request, 'registration.html')
 
-		user_type = get_user_type_from_email(email_id)
+	user_type = get_user_type_from_email(email_id)
 
-		if user_type is None:
-			messages.error(request, "Please use valid format for the email id: '<username>.<staff|student|hod>@<college_domain>'")
-			return render(request, 'registration.html')
+	if user_type is None:
+		messages.error(request, "Please use valid format for the email id: '<username>.<staff|student|hod>@<college_domain>'")
+		return render(request, 'registration.html')
 
-		username = email_id.split('@')[0].split('.')[0]
+	username = email_id.split('@')[0].split('.')[0]
 
-		if CustomUser.objects.filter(username=username).exists():
-			messages.error(request, 'User with this username already exists. Please use different username')
-			return render(request, 'registration.html')
+	if CustomUser.objects.filter(username=username).exists():
+		messages.error(request, 'User with this username already exists. Please use different username')
+		return render(request, 'registration.html')
 
-		user = CustomUser()
-		user.username = username
-		user.email = email_id
+	user = CustomUser()
+	user.username = username
+	user.email = email_id
 		user.password = make_password(password)
-		user.user_type = user_type
-		user.first_name = first_name
-		user.last_name = last_name
-		user.save()
+	user.user_type = user_type
+	user.first_name = first_name
+	user.last_name = last_name
+	user.save()
 		messages.success(request, 'Registration successful! Please login.')
 		return redirect('login')
 	else:
