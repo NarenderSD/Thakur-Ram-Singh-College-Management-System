@@ -177,20 +177,36 @@ A: Use the contact form or reach out to the maintainer below.
 
 ## 📞 Contact & Support
 
-- **Email:** [info@trsc.edu.in](mailto:info@trsc.edu.in)
-- **Website:** [https://trsc.edu.in](https://trsc.edu.in)
+- **Email:** [narendersingh2028@gmail.com](mailto:narendersingh2028@gmail.com)
+- **Website:** [Comming Soon](https://www.linkedin.com/in/narendersingh1/)
 - **Project Maintainer:** Narender Singh
 - [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/narendersingh1/)
 
 ---
 
+## 📜 Usage & Permission
+
+> **Important:**
+>
+> - If you wish to use this project in your own work, for commercial purposes, or to earn/sell using this code, you **must** request permission from the author (Narender Singh) first.
+> - Please connect with me on [![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/narendersingh1/) and send a message for permission.
+> - Any use, earning, or resale of this project without explicit permission is **not allowed**.
+> - Respect the creator's rights and help maintain a fair, professional open-source community.
+
+---
+
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under a custom license:
+- **Personal and educational use is allowed.**
+- **Commercial use, earning, or resale requires explicit written permission from the author.**
+- For permission, contact [Narender Singh on LinkedIn](https://www.linkedin.com/in/narendersingh1/).
+
+See the [LICENSE](LICENSE) file for full details.
 
 ---
 
 <p align="center">
-  <b>Built with ❤️ by Narender Singh for Thakur Ram Singh College (TRSC)</b><br/>
+  <b>Built with ❤️ by Narender Singh <br> for Thakur Ram Singh College (TRSC)</b><br/>
   <img src="student_management_app/static/branding/CollegeLogo.png" alt="TRSC College Logo" width="80"/>
 </p>
